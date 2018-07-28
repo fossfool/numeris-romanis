@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AF078F0210A0243004BDE4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF078EF210A0243004BDE4C /* AppDelegate.swift */; };
+		1AF078F2210A0243004BDE4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF078F1210A0243004BDE4C /* ViewController.swift */; };
+		1AF078F4210A0243004BDE4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AF078F3210A0243004BDE4C /* Assets.xcassets */; };
+		1AF078F7210A0243004BDE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF078F5210A0243004BDE4C /* Main.storyboard */; };
+		1AF07903210A0243004BDE4C /* NumerisRomanisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF07902210A0243004BDE4C /* NumerisRomanisTests.swift */; };
+		1AF07910210A02EA004BDE4C /* RInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF0790F210A02EA004BDE4C /* RInt.swift */; };
+		1AF07914210A0363004BDE4C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1AF07912210A0363004BDE4C /* README.md */; };
+		1AF0791E210A2E84004BDE4C /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AF0791D210A2E84004BDE4C /* README.html */; };
+		1AF07920210A30CF004BDE4C /* LICENSE.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AF0791F210A30CF004BDE4C /* LICENSE.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AF078FF210A0243004BDE4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AF078E4210A0243004BDE4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AF078EB210A0243004BDE4C;
+			remoteInfo = NumerisRomanis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AF078EC210A0243004BDE4C /* NumerisRomanis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumerisRomanis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF078EF210A0243004BDE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1AF078F1210A0243004BDE4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1AF078F3210A0243004BDE4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AF078F6210A0243004BDE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AF078F8210A0243004BDE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AF078F9210A0243004BDE4C /* NumerisRomanis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NumerisRomanis.entitlements; sourceTree = "<group>"; };
+		1AF078FE210A0243004BDE4C /* NumerisRomanisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumerisRomanisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF07902210A0243004BDE4C /* NumerisRomanisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerisRomanisTests.swift; sourceTree = "<group>"; };
+		1AF07904210A0243004BDE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AF0790F210A02EA004BDE4C /* RInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RInt.swift; sourceTree = "<group>"; };
+		1AF07912210A0363004BDE4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1AF0791D210A2E84004BDE4C /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
+		1AF0791F210A30CF004BDE4C /* LICENSE.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LICENSE.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AF078E9210A0243004BDE4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AF078FB210A0243004BDE4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AF078E3210A0243004BDE4C = {
+			isa = PBXGroup;
+			children = (
+				1AF0790E210A028E004BDE4C /* RInt */,
+				1AF0790D210A025E004BDE4C /* docs */,
+				1AF078EE210A0243004BDE4C /* NumerisRomanis */,
+				1AF07901210A0243004BDE4C /* NumerisRomanisTests */,
+				1AF078ED210A0243004BDE4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AF078ED210A0243004BDE4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AF078EC210A0243004BDE4C /* NumerisRomanis.app */,
+				1AF078FE210A0243004BDE4C /* NumerisRomanisTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AF078EE210A0243004BDE4C /* NumerisRomanis */ = {
+			isa = PBXGroup;
+			children = (
+				1AF078EF210A0243004BDE4C /* AppDelegate.swift */,
+				1AF078F1210A0243004BDE4C /* ViewController.swift */,
+				1AF078F3210A0243004BDE4C /* Assets.xcassets */,
+				1AF078F5210A0243004BDE4C /* Main.storyboard */,
+				1AF078F8210A0243004BDE4C /* Info.plist */,
+				1AF078F9210A0243004BDE4C /* NumerisRomanis.entitlements */,
+			);
+			path = NumerisRomanis;
+			sourceTree = "<group>";
+		};
+		1AF07901210A0243004BDE4C /* NumerisRomanisTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AF07902210A0243004BDE4C /* NumerisRomanisTests.swift */,
+				1AF07904210A0243004BDE4C /* Info.plist */,
+			);
+			path = NumerisRomanisTests;
+			sourceTree = "<group>";
+		};
+		1AF0790D210A025E004BDE4C /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				1AF0791F210A30CF004BDE4C /* LICENSE.html */,
+				1AF0791D210A2E84004BDE4C /* README.html */,
+				1AF07912210A0363004BDE4C /* README.md */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		1AF0790E210A028E004BDE4C /* RInt */ = {
+			isa = PBXGroup;
+			children = (
+				1AF0790F210A02EA004BDE4C /* RInt.swift */,
+			);
+			path = RInt;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AF078EB210A0243004BDE4C /* NumerisRomanis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AF07907210A0243004BDE4C /* Build configuration list for PBXNativeTarget "NumerisRomanis" */;
+			buildPhases = (
+				1AF078E8210A0243004BDE4C /* Sources */,
+				1AF078E9210A0243004BDE4C /* Frameworks */,
+				1AF078EA210A0243004BDE4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NumerisRomanis;
+			productName = NumerisRomanis;
+			productReference = 1AF078EC210A0243004BDE4C /* NumerisRomanis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AF078FD210A0243004BDE4C /* NumerisRomanisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AF0790A210A0243004BDE4C /* Build configuration list for PBXNativeTarget "NumerisRomanisTests" */;
+			buildPhases = (
+				1AF078FA210A0243004BDE4C /* Sources */,
+				1AF078FB210A0243004BDE4C /* Frameworks */,
+				1AF078FC210A0243004BDE4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AF07900210A0243004BDE4C /* PBXTargetDependency */,
+			);
+			name = NumerisRomanisTests;
+			productName = NumerisRomanisTests;
+			productReference = 1AF078FE210A0243004BDE4C /* NumerisRomanisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AF078E4210A0243004BDE4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Wylder Media Group, LLC";
+				TargetAttributes = {
+					1AF078EB210A0243004BDE4C = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					1AF078FD210A0243004BDE4C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 1AF078EB210A0243004BDE4C;
+					};
+				};
+			};
+			buildConfigurationList = 1AF078E7210A0243004BDE4C /* Build configuration list for PBXProject "NumerisRomanis" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AF078E3210A0243004BDE4C;
+			productRefGroup = 1AF078ED210A0243004BDE4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AF078EB210A0243004BDE4C /* NumerisRomanis */,
+				1AF078FD210A0243004BDE4C /* NumerisRomanisTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AF078EA210A0243004BDE4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AF07920210A30CF004BDE4C /* LICENSE.html in Resources */,
+				1AF0791E210A2E84004BDE4C /* README.html in Resources */,
+				1AF078F4210A0243004BDE4C /* Assets.xcassets in Resources */,
+				1AF07914210A0363004BDE4C /* README.md in Resources */,
+				1AF078F7210A0243004BDE4C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AF078FC210A0243004BDE4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AF078E8210A0243004BDE4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AF07910210A02EA004BDE4C /* RInt.swift in Sources */,
+				1AF078F2210A0243004BDE4C /* ViewController.swift in Sources */,
+				1AF078F0210A0243004BDE4C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AF078FA210A0243004BDE4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AF07903210A0243004BDE4C /* NumerisRomanisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AF07900210A0243004BDE4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AF078EB210A0243004BDE4C /* NumerisRomanis */;
+			targetProxy = 1AF078FF210A0243004BDE4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1AF078F5210A0243004BDE4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AF078F6210A0243004BDE4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AF07905210A0243004BDE4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1AF07906210A0243004BDE4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1AF07908210A0243004BDE4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 884AFPDD9Q;
+				INFOPLIST_FILE = NumerisRomanis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = media.wylder.macos.NumerisRomanis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1AF07909210A0243004BDE4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 884AFPDD9Q;
+				INFOPLIST_FILE = NumerisRomanis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = media.wylder.macos.NumerisRomanis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		1AF0790B210A0243004BDE4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 884AFPDD9Q;
+				INFOPLIST_FILE = NumerisRomanisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = media.wylder.macos.NumerisRomanisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NumerisRomanis.app/Contents/MacOS/NumerisRomanis";
+			};
+			name = Debug;
+		};
+		1AF0790C210A0243004BDE4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 884AFPDD9Q;
+				INFOPLIST_FILE = NumerisRomanisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = media.wylder.macos.NumerisRomanisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NumerisRomanis.app/Contents/MacOS/NumerisRomanis";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AF078E7210A0243004BDE4C /* Build configuration list for PBXProject "NumerisRomanis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AF07905210A0243004BDE4C /* Debug */,
+				1AF07906210A0243004BDE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AF07907210A0243004BDE4C /* Build configuration list for PBXNativeTarget "NumerisRomanis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AF07908210A0243004BDE4C /* Debug */,
+				1AF07909210A0243004BDE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AF0790A210A0243004BDE4C /* Build configuration list for PBXNativeTarget "NumerisRomanisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AF0790B210A0243004BDE4C /* Debug */,
+				1AF0790C210A0243004BDE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AF078E4210A0243004BDE4C /* Project object */;
+}
