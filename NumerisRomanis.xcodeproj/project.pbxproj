@@ -13,7 +13,6 @@
 		1AF078F7210A0243004BDE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF078F5210A0243004BDE4C /* Main.storyboard */; };
 		1AF07903210A0243004BDE4C /* NumerisRomanisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF07902210A0243004BDE4C /* NumerisRomanisTests.swift */; };
 		1AF07910210A02EA004BDE4C /* RInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF0790F210A02EA004BDE4C /* RInt.swift */; };
-		1AF07914210A0363004BDE4C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1AF07912210A0363004BDE4C /* README.md */; };
 		1AF0791E210A2E84004BDE4C /* README.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AF0791D210A2E84004BDE4C /* README.html */; };
 		1AF07920210A30CF004BDE4C /* LICENSE.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AF0791F210A30CF004BDE4C /* LICENSE.html */; };
 /* End PBXBuildFile section */
@@ -40,7 +39,6 @@
 		1AF07902210A0243004BDE4C /* NumerisRomanisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerisRomanisTests.swift; sourceTree = "<group>"; };
 		1AF07904210A0243004BDE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AF0790F210A02EA004BDE4C /* RInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RInt.swift; sourceTree = "<group>"; };
-		1AF07912210A0363004BDE4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1AF0791D210A2E84004BDE4C /* README.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = README.html; sourceTree = "<group>"; };
 		1AF0791F210A30CF004BDE4C /* LICENSE.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LICENSE.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,10 +64,10 @@
 		1AF078E3210A0243004BDE4C = {
 			isa = PBXGroup;
 			children = (
-				1AF0790E210A028E004BDE4C /* RInt */,
+				1AF0790E210A028E004BDE4C /* src */,
 				1AF0790D210A025E004BDE4C /* docs */,
-				1AF078EE210A0243004BDE4C /* NumerisRomanis */,
-				1AF07901210A0243004BDE4C /* NumerisRomanisTests */,
+				1AF078EE210A0243004BDE4C /* tools */,
+				1AF07901210A0243004BDE4C /* tests */,
 				1AF078ED210A0243004BDE4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,7 +81,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1AF078EE210A0243004BDE4C /* NumerisRomanis */ = {
+		1AF078EE210A0243004BDE4C /* tools */ = {
 			isa = PBXGroup;
 			children = (
 				1AF078EF210A0243004BDE4C /* AppDelegate.swift */,
@@ -93,16 +91,16 @@
 				1AF078F8210A0243004BDE4C /* Info.plist */,
 				1AF078F9210A0243004BDE4C /* NumerisRomanis.entitlements */,
 			);
-			path = NumerisRomanis;
+			path = tools;
 			sourceTree = "<group>";
 		};
-		1AF07901210A0243004BDE4C /* NumerisRomanisTests */ = {
+		1AF07901210A0243004BDE4C /* tests */ = {
 			isa = PBXGroup;
 			children = (
 				1AF07902210A0243004BDE4C /* NumerisRomanisTests.swift */,
 				1AF07904210A0243004BDE4C /* Info.plist */,
 			);
-			path = NumerisRomanisTests;
+			path = tests;
 			sourceTree = "<group>";
 		};
 		1AF0790D210A025E004BDE4C /* docs */ = {
@@ -110,17 +108,16 @@
 			children = (
 				1AF0791F210A30CF004BDE4C /* LICENSE.html */,
 				1AF0791D210A2E84004BDE4C /* README.html */,
-				1AF07912210A0363004BDE4C /* README.md */,
 			);
 			path = docs;
 			sourceTree = "<group>";
 		};
-		1AF0790E210A028E004BDE4C /* RInt */ = {
+		1AF0790E210A028E004BDE4C /* src */ = {
 			isa = PBXGroup;
 			children = (
 				1AF0790F210A02EA004BDE4C /* RInt.swift */,
 			);
-			path = RInt;
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +209,6 @@
 				1AF07920210A30CF004BDE4C /* LICENSE.html in Resources */,
 				1AF0791E210A2E84004BDE4C /* README.html in Resources */,
 				1AF078F4210A0243004BDE4C /* Assets.xcassets in Resources */,
-				1AF07914210A0363004BDE4C /* README.md in Resources */,
 				1AF078F7210A0243004BDE4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 884AFPDD9Q;
-				INFOPLIST_FILE = NumerisRomanis/Info.plist;
+				INFOPLIST_FILE = tools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -405,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 884AFPDD9Q;
-				INFOPLIST_FILE = NumerisRomanis/Info.plist;
+				INFOPLIST_FILE = tools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
