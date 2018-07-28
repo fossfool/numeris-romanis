@@ -1,4 +1,4 @@
-# **Numerus Romanus:**
+# **Numeris Romanis:**
 ## A *mildly absurd* Swift IV Structure for Roman Numerals.
 
 Many say the Romans had no concept of negative numbers, or numbers larger than 3,999 they definitely had sophisticated financial systems, and clearly understood the concept of debits and credits, and debt owed. [(See this wikipedia page for more information on it's history.)](https://en.wikipedia.org/wiki/Roman_finance). To this end, I created a robust integer type to give this old world system the attention and credit it deserves today. Enjoy!

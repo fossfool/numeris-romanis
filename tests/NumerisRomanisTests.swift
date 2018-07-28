@@ -33,14 +33,6 @@ struct TestResults {
 
 class NumerisRomanisTests: XCTestCase {
 
-    private let docHashes = [
-        ("LICENSE", "md", "-3359061485464795844"),
-        ("LICENSE", "html", "2204883064120204797"),
-        ("README", "md", "-8636833594603812845"),
-        ("README", "html", "2718529898568463416"),
-    ]
-   
-
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -266,58 +258,5 @@ class NumerisRomanisTests: XCTestCase {
         }
 
     }
-
-    // Alerts if documentation has been altered or is missing. Because we have
-    // txt md and html versions, they need to be regenerated for all types if
-    // modifications are made. This warning alerts us to run the transformations.
-    // I use atom to maintain documentation and highly recommend it.
-    func testDocVersions() {
-
-        var results: [[String]] = []
-        
-        var allPassed = true
-        
-        for (flname, ext, hash) in docHashes {
-            
-            let curHash = hashFile(flname, ext)
-            
-            if curHash.hasPrefix("Error:") || curHash != hash {
-                allPassed = false
-            }
-            
-            results.append([(curHash == hash ? "PASSED" : "FAILED"), flname, ext, hash, curHash])
-        }
-
-        if !allPassed {
-            print("Document Tests Failed")
-            for r in results {
-                print(r)
-            }
-            print("New results if needed.....")
-            for r in results {
-                print("        (\"\(r[1])\", \"\(r[2])\", \"\(r[4])\"),")
-            }
-            XCTAssert(allPassed, "Document Tests failed")
-        }
-    }
-    
-    func hashFile(_ fileName: String, _ ext: String ) -> String  {
-        do {
-            guard let filePath = Bundle.main.path(forResource: fileName, ofType: ext)
-                else {
-                    // File Error
-                    return "Error getting the file"
-            }
-            let contents =  try String(contentsOfFile: filePath, encoding: .utf8)
-      
-            return String(contents.hashValue ^ (fileName + ext).hashValue)
-        }
-        catch {
-            return "Error: couldn't process the file."
-        }
-    }
-
-
-
 
 }
