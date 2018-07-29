@@ -214,3 +214,49 @@ Now to blow your mind try:
      print(year) // MMXVIII
 
 **Yep that's Roman Literal Integer Double Hex Binary :]**
+
+# Version Updates:
+
+## Nulla . II . Nulla
+
+Added support for Roman Unicode characters.
+
+added:
+
+**New:** A default to select if the returned strings are in normal alpha characters or in Roman Unicode:
+
+    public static var defaultUseRomanUnicodeChars: Bool
+
+**New:** An enumeration for Text Case.
+
+    public enum TextCase: String { case Upper, Lower }
+
+**Updated:** description to return either alpha characters or the extended Roman unicode characters based on default selections.
+
+    public var description: String
+
+**Updated:** The property asRomanString is always returned as an alpha string.
+
+    public var asRomanString
+
+**New:** The property asRomanUnicodeChars is aways returned as RomanUnicode.
+
+    public asRomanUnicodeChars: string
+
+**Updated:** Added support for Roman Unicode characters for input from string literals, etc. Added the ability to override the default case.
+
+    public static func convertToRoman(_ value: Int,
+           useRomanUnicode: Bool = defaultUseRomanUnicodeChars,
+           textCase: TextCase = defaultCase ) -> String
+
+**New:** Added Unit test for Roman Unicode support.
+
+    func testRomanUnicodeCharacterSupport()
+
+**Updated:** Updated the conversion unit test to include Roman Unicode testing.
+
+    func testConversion()
+
+## Nulla . I . Nulla
+
+Initial release
