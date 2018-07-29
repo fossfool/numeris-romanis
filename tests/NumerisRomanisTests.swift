@@ -216,6 +216,10 @@ class NumerisRomanisTests: XCTestCase {
         // for faster testing set it to false
 
         let deepTest = false
+        
+        // For Roman Unicode testing set to true
+        
+        RInt.defaultUseRomanUnicodeChars = false
 
         //Traditional values
 
@@ -256,7 +260,51 @@ class NumerisRomanisTests: XCTestCase {
             }
 
         }
-
     }
+
+    
+    func testRomanUnicodeCharacterSupport() {
+        
+        let romanUnicode = [("Ⅰ","I"), ("Ⅱ","II"), ("Ⅲ","III"), ("Ⅳ","IV"), ("Ⅴ","V"),
+                            ("Ⅵ","VI"), ("Ⅶ","VII"), ("Ⅷ","VIII"), ("Ⅸ","IX"), ("Ⅹ","X"),
+                            ("Ⅺ","XI"), ("Ⅻ","XII"), ("Ⅼ","L"), ("Ⅽ","C"), ("Ⅾ","D"), ("Ⅿ","M"),
+                            ("ⅰ","I"), ("ⅱ","II"), ("ⅲ", "III"), ("ⅳ", "IV"), ("ⅴ", "V"),
+                            ("ⅵ", "VI"), ("ⅶ", "VII"), ("ⅷ", "VIII"), ("ⅸ", "IX"), ("ⅹ", "X"),
+                            ("ⅺ","XI"), ("ⅻ","XII"), ("ⅼ", "L"), ("ⅽ", "C"), ("ⅾ","D"), ("ⅿ", "M")]
+        // ("L") is not equal to ("l")
+        for (uCode, rStr) in romanUnicode {
+                let r = RInt(uCode)
+            print("uCode: .\(uCode).  rStr: .\(rStr). r .\(r.asRomanString). ")
+            XCTAssertEqual(r.asRomanString, rStr, "Bad Unicode Translation")
+        }
+        let r: RInt = "MⅽⅽⅽⅹⅽⅨ"
+        XCTAssertEqual(r.asInt, 1_399, "Bad Unicode Translation")
+        // test case return
+        XCTAssertEqual(r.asRomanUnicode.lowercased(), "ⅿⅽⅽⅽⅹⅽⅸ", "Bad Unicode Translation")
+        XCTAssertEqual(r.asRomanUnicode.uppercased(), "ⅯⅭⅭⅭⅩⅭⅨ", "Bad Unicode Translation")
+
+        RInt.defaultUseRomanUnicodeChars = true
+        XCTAssertEqual(r.description, "ⅯⅭⅭⅭⅩⅭⅨ", "Bad Unicode Translation")
+
+        RInt.defaultCase = .Lower
+        XCTAssertEqual(r.description, "ⅿⅽⅽⅽⅹⅽⅸ", "Bad Unicode Translation")
+
+        RInt.defaultUseRomanUnicodeChars = false
+        XCTAssertEqual(r.description, "mcccxcix", "Bad Unicode Translation")
+
+        RInt.defaultCase = .Upper
+        XCTAssertEqual(r.description, "MCCCXCIX", "Bad Unicode Translation")
+        
+    }
+    
+    func testApotrophusSupport() {
+        // someday - maybe - This has other issues - ambiguous references and missing Unicode
+        // representation. More research required.
+        //let rareUnicode = [("ↀ", 1_000),("ↁ", 5_000),("ↂ", 10_000), ↄ    ↅ    ↆ    ↇ    ↈ]
+        
+    }
+    
+    
+    
 
 }

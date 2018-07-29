@@ -47,6 +47,8 @@ public struct RInt:
     public typealias Words = Int.Words
     public typealias Magnitude = UInt
 
+    public enum TextCase: String { case Upper, Lower }
+    
     /************************
         Static Properties
      ************************/
@@ -74,6 +76,13 @@ public struct RInt:
         get { return nulla }
     }
 
+    // default text case
+    public static var defaultCase: TextCase = .Upper
+    
+    // If true String returns use RomanUnicode Characters
+    // If false String returns use standeard "ascii" text
+    public static var defaultUseRomanUnicodeChars = false
+    
     /**************************
         Instance Properties
      **************************/
@@ -102,12 +111,21 @@ public struct RInt:
     public var asRomanString: String {
         return RInt.convertToRoman(value)
     }
-
+    
+    public var asRomanUnicode: String {
+        return RInt.convertToRoman(value, useRomanUnicode: true)
+    }
+    
     // Protocol Properties
 
     // Required by CustomStringConvertible
     public var description: String {
-        return self.asRomanString
+        if RInt.defaultUseRomanUnicodeChars {
+            return self.asRomanUnicode
+            
+        } else {
+            return self.asRomanString
+        }
     }
 
     // required by binaryInteger Protocol
@@ -431,10 +449,40 @@ public struct RInt:
         return lhs < rhs.value
     }
 
-
     /**********************************
         Static Conversion Functions
      **********************************/
+
+    // This sort is used to maximize compression of
+    // numbers in the string. 
+    private static let romanUnicode = [
+        ("Ⅿ","M"), ("Ⅾ","D"), ("Ⅽ","C"), ("Ⅼ","L"),
+        ("Ⅻ","XII"), ("Ⅺ","XI"), ("Ⅸ","IX"), ("Ⅹ","X"),
+	    ("Ⅷ","VIII"), ("Ⅶ","VII"), ("Ⅵ","VI"), ("Ⅳ","IV"), ("Ⅴ","V"),
+        ("Ⅲ","III"), ("Ⅱ","II"), ("Ⅰ","I"),
+        ("ⅿ", "M"), ("ⅾ","D"), ("ⅽ", "C"), ("ⅼ", "L"),
+        ("ⅻ","XII"), ("ⅺ","XI"), ("ⅸ","IX"), ("ⅹ", "X"),
+        ("ⅷ", "VII"), ("ⅶ", "VII"), ("ⅵ", "VI"), ("ⅳ", "IV"), ("ⅴ", "V"),
+        ("ⅲ", "III"), ("ⅱ","II"), ("ⅰ","I")]
+
+    // converts or uncoverts a String of Roman numerals characters to or from
+    // Roman Unicode Characters depedning on UseRomanUnicode flag
+    private static func convertRomanUnicodeCharacters(_ romanString: String, UseRomanUnicode: Bool) -> String {
+        var rtn = romanString
+        
+        // replacingOccurrences has an issue with releasing memory
+        autoreleasepool {
+            for (u, c) in romanUnicode {
+                if UseRomanUnicode {
+                    rtn = rtn.replacingOccurrences(of: c, with: u)
+                } else
+                {
+                    rtn = rtn.replacingOccurrences(of: u, with: c)
+                }
+            }
+        }
+        return rtn
+    }
     
     //converts a string to Int. Supports all Int literal types plus
     //Roman Numerals.
@@ -461,6 +509,10 @@ public struct RInt:
             sign = -1
             text = String(text.dropFirst(RInt.defaultNegativeSign.count))
         }
+        
+        //check for RomanUnicode characters
+        
+        text = convertRomanUnicodeCharacters(text, UseRomanUnicode: false)
         
         for t in text.uppercased() {
             var curVal = 0
@@ -523,13 +575,14 @@ public struct RInt:
     }
 
     // A template array used to convert integers to Roman Numbers.
-
     private static let conversionArray = [
         [ "i", "ii", "iii", "IV", "V", "VI", "VII", "VIII", "IX" ],
         [ "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" ],
         [ "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" ]]
 
-    public static func convertToRoman(_ value: Int) -> String {
+    public static func convertToRoman(_ value: Int,
+                                      useRomanUnicode: Bool = defaultUseRomanUnicodeChars,
+                                      textCase: TextCase = defaultCase ) -> String {
 
         precondition((value <= Int.max  &&
                   value >= Int.min), "Value out of range")
@@ -542,78 +595,88 @@ public struct RInt:
         if isNegative && value == Int.min {
             // check 32 bit Int first to avoid overflow
             if value == Int(Int32.min) {
-                return RInt.defaultNegativeSign +
-                    "(MMCXLVII)CDLXXX)MMMDCXLVIII"
+                rtn = "(MMCXLVII)CDLXXX)MMMDCXLVIII"
             }
             else {
-                return RInt.defaultNegativeSign +
-                    "((((((IX)CCXX)MMMCCCLXX)MMXXXVI)DCCCLIV)DCCLXXV)DCCCVIII"
+                rtn = "((((((IX)CCXX)MMMCCCLXX)MMXXXVI)DCCCLIV)DCCLXXV)DCCCVIII"
             }
-        }
-
-        let val = String(abs(value)).description.reversed()
-    
-        var pos = 0
-        var openParens = ""
-        var iCheckPos = 0
+        } else
+        {
+            let val = String(abs(value)).description.reversed()
         
-        for d in val {
-            let digit = Int(String(d))!
-            if digit > 0 {
-                
-                let row = (pos) % 3
-                let conversionRow = RInt.conversionArray[row]
-                let romanNumeral = conversionRow[digit - 1]
-                var mOrI = "I"
+            var pos = 0
+            var openParens = ""
+            var iCheckPos = 0
+            
+            for d in val {
+                let digit = Int(String(d))!
+                if digit > 0 {
+                    
+                    let row = (pos) % 3
+                    let conversionRow = RInt.conversionArray[row]
+                    let romanNumeral = conversionRow[digit - 1]
+                    var mOrI = "I"
 
-                if pos >= 3 {
-                    let parens = pos / 3
-                    
-                    
-                    mOrI = "M"
-                    
-                    // this block ignores the magnitude change in paren if
-                    // the value is i,ii, or iii.
+                    if pos >= 3 {
+                        let parens = pos / 3
+                        
+                        
+                        mOrI = "M"
+                        
+                        // this block ignores the magnitude change in paren if
+                        // the value is i,ii, or iii.
 
-                    if iCheckPos < parens && ( romanNumeral == "i" || romanNumeral == "ii" || romanNumeral == "iii")  {
-                        if parens - 1 > 0 {
-                            let parensRequired = (parens - 1) - openParens.count
+                        if iCheckPos < parens && ( romanNumeral == "i" || romanNumeral == "ii" || romanNumeral == "iii")  {
+                            if parens - 1 > 0 {
+                                let parensRequired = (parens - 1) - openParens.count
+                                rtn = "\(String(repeating: ")", count: parensRequired))\(rtn)"
+                                openParens += String(repeating: "(", count: parensRequired)
+                            }
+                            iCheckPos = parens
+                        }
+                        else if openParens.count < parens {
+
+                            let parensRequired = parens - openParens.count
                             rtn = "\(String(repeating: ")", count: parensRequired))\(rtn)"
                             openParens += String(repeating: "(", count: parensRequired)
+                            iCheckPos = parens
                         }
-                        iCheckPos = parens
                     }
-                    else if openParens.count < parens {
-
-                        let parensRequired = parens - openParens.count
-                        rtn = "\(String(repeating: ")", count: parensRequired))\(rtn)"
-                        openParens += String(repeating: "(", count: parensRequired)
-                        iCheckPos = parens
+                    
+                        // Auto Release pool was implemented because
+                        // replacingOccurrences retains memory after
+                        // call.
+                    // implemented due to memory consumption of replacingOccurrances(Of:)
+                    autoreleasepool {
+                        rtn = "\(romanNumeral.replacingOccurrences(of: "i", with: mOrI))\(rtn)"
                     }
-                }
-                
-                    // Auto Release pool was implemented because
-                    // replacingOccurrences retains memory after
-                    // call.
-                // implemented due to memory consumption of replacingOccurrances(Of:)
-                autoreleasepool {
-                    rtn = "\(romanNumeral.replacingOccurrences(of: "i", with: mOrI))\(rtn)"
-                }
 
+                }
+                else
+                {
+                    rtn = "" + rtn
+                }
+                pos += 1
             }
-            else
-            {
-                rtn = "" + rtn
-            }
-            pos += 1
-        }
-    
-        rtn = "\(isNegative ? RInt.defaultNegativeSign:"")" +
-              "\(rtn.count > 0 ? openParens + rtn : nulla)"
-            
-
-    return rtn
         
+            rtn = "\(rtn.count > 0 ? openParens + rtn : nulla)"
+            
+        } // else value wan't Int.min
+    
+        // rtn currently in Uppercase ascii
+        // set to unicode if necessary and set case ix and Unicode and case
+
+        if useRomanUnicode {
+            rtn = convertRomanUnicodeCharacters(rtn, UseRomanUnicode: true)
+        }
+        
+        if textCase == .Lower {
+           rtn = rtn.lowercased()
+        }
+        
+        rtn = isNegative ? defNegSign + rtn : rtn
+        
+        return rtn
     }
 
  
